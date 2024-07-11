@@ -48,7 +48,7 @@ nav > div > img {
   height: 50px;
 }
 
-nav>:nth-child(1){
+nav > :nth-child(1) {
   width: 60%;
   gap: 60px;
 }
@@ -495,8 +495,6 @@ nav > div > ul > li {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #38383834; */
-  /* backdrop-filter: blur(10px); */
   border-radius: 50px;
   padding: 15px;
 }
@@ -738,41 +736,126 @@ nav > div > ul > li {
   background-color: #e80;
 }
 
-@media (max-width : 1050px){
-  .show > h1{
+@media (max-width: 1050px) {
+  .show > h1 {
     font-size: 100px;
   }
 }
 
-@media (max-width : 800px){
-  .show > h1{
+@media (max-width: 800px) {
+  .show > h1 {
     font-size: 80px;
   }
-  .show > img{
+  .show > img {
     height: 450px;
   }
 }
 
-@media (max-width : 850px){
-  .contact{
+@media (max-width: 850px) {
+  .contact {
     display: none;
   }
-  .content>h1{
+  .content > h1 {
     font-size: 40px;
   }
 }
 
-@media (max-width : 650px){
-  nav > div > ul{
+@media (max-width: 650px) {
+  nav > div > ul {
     display: none;
   }
-  nav >:nth-child(1){
+  nav > :nth-child(1) {
     width: 100%;
     justify-content: space-between;
   }
-  .collection>img{
+  .collection > img {
     height: 100px;
     width: 180px;
+  }
+  .collection {
+    animation: none;
+  }
+  .content {
+    animation: none;
+  }
+  .show {
+    height: 80vh;
+    overflow: clip;
+  }
+  .show > :first-child {
+    height: 510px;
+    transform: translate(-40%, -50%) rotate(10deg);
+    animation: phone-img-one linear;
+    animation-timeline: view(1000px -200px);
+  }
+  .show > :nth-child(2) {
+    height: 510px;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    animation: phone-img-two linear;
+    animation-timeline: view(1000px -200px);
+  }
+  .last-section > div {
+    animation: all-all linear;
+    animation-timeline: view(800px -50px);
+  }
+  .last-section {
+    height: 80vh;
+  }
+  .flash {
+    top: 80%;
+    animation-timeline: view(650px 120px);
+  }
+  .selfie > img {
+    animation: slide-img linear;
+    animation-timeline: view(800px -50px);
+    height: 300px;
+    left: -10px;
+  }
+  .pic > img {
+    height: 220px;
+    animation: none;
+  }
+  .s-pic > h1 {
+    text-wrap: nowrap;
+    top: 75%;
+  }
+  .dot-cir-3 {
+    display: none;
+  }
+  .dot-cir-2 {
+    display: none;
+  }
+  .dot-cir {
+    display: none;
+  }
+  .point-3 > p {
+    transform: translateX(20px) translateY(120px);
+  }
+  .point > p {
+    transform: translateX(-40%) translateY(40px);
+  }
+  .selfie {
+    overflow: clip;
+    height: 80vh;
+  }
+  .selfie > h1 {
+    animation: none;
+    animation: all-all linear;
+    animation-timeline: view(850px -350px);
+    transform: translateY(-120%) translateX(25%) rotate(90deg);
+  }
+  .s-pic {
+    overflow: clip;
+    animation-timeline: view(900px -200px);
+  }
+  .footer-section p {
+    width: 80%;
+  }
+  .footer-section.newsletter button {
+    width: 200px;
+  }
+  .footer {
+    box-sizing: border-box;
   }
 }
 
@@ -782,7 +865,6 @@ nav > div > ul > li {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
   .footer-section {
     flex: 1;
     margin: 20px;
@@ -790,25 +872,116 @@ nav > div > ul > li {
   }
 }
 
-
-@media (max-width: 500px){
-  .collection{
+@media (max-width: 500px) {
+  .collection {
     left: 20px;
     right: auto;
     bottom: 200px;
   }
-  .landing-page{
+  .landing-page {
     height: 100vh;
     animation: none;
   }
-  .landing-page > video{
+  .landing-page > video {
     height: 100vh;
     object-position: center;
   }
-  .content{
+  .content {
     margin-bottom: 20px;
   }
-  .show > h1{
-    font-size: 40px;
+  .show > h1 {
+    font-size: 50px;
+    animation: fade-in linear;
+    animation-timeline: view(0px 600px);
+  }
+}
+
+.lp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  gap: 20px;
+  background-color: #000000;
+}
+
+.lp > div {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid white;
+  border-radius: 50%;
+  animation: loading 1s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes all-all {
+  0% {
+    scale: 0.4;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes slide-img {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes phone-img-one {
+  0% {
+    transform: translate(-40%, -50%) rotate(10deg) scale(0.4);
+  }
+  100% {
+    transform: translate(-40%, -50%) rotate(10deg) scale(1);
+  }
+}
+@keyframes phone-img-two {
+  0% {
+    transform: translate(-50%, -50%) rotate(-10deg) scale(0.4);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-10deg) scale(1);
+  }
+}
+@keyframes one-point {
+  0% {
+    transform: translateX(-100%) translateY(120px);
+  }
+  100% {
+    transform: translateX(20px) translateY(120px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    scale: 1;
+    filter: blur(0px);
+  }
+  100% {
+    scale: 1.5;
+    filter: blur(3px);
   }
 }
