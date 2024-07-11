@@ -779,7 +779,7 @@ nav > div > ul > li {
     animation: none;
   }
   .show {
-    height: 80vh;
+    height: 100vh;
     overflow: clip;
   }
   .show > :first-child {
@@ -799,7 +799,7 @@ nav > div > ul > li {
     animation-timeline: view(800px -50px);
   }
   .last-section {
-    height: 80vh;
+    height: 100vh;
   }
   .flash {
     top: 80%;
@@ -828,15 +828,9 @@ nav > div > ul > li {
   .dot-cir {
     display: none;
   }
-  .point-3 > p {
-    transform: translateX(20px) translateY(120px);
-  }
-  .point > p {
-    transform: translateX(-40%) translateY(40px);
-  }
   .selfie {
     overflow: clip;
-    height: 80vh;
+    height: 100vh;
   }
   .selfie > h1 {
     animation: none;
@@ -896,6 +890,26 @@ nav > div > ul > li {
   }
 }
 
+@media (max-width: 370px) {
+  .point > p{
+    transform: translateX(0%) translateY(20px);
+  }
+  .point-2 > p{
+    transform: translateX(20px) translateY(50px);
+  }
+  .point-3 > p{
+    transform: translateX(20px) translateY(55px);  
+  }
+  .show > :first-child{
+    height: 480px;
+  }
+  .selfie>img{
+    animation: slide-img-two linear;
+    animation-timeline: view(800px -50px);
+    left: -10%;
+  }
+}
+
 .lp {
   position: absolute;
   top: 0;
@@ -947,6 +961,14 @@ nav > div > ul > li {
   }
   100% {
     transform: translateX(0px);
+  }
+}
+@keyframes slide-img-two {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-10%);
   }
 }
 
