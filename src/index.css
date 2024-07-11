@@ -851,6 +851,12 @@ nav > div > ul > li {
   .footer {
     box-sizing: border-box;
   }
+  body::-webkit-scrollbar{
+    display: none;
+  }
+  html::-webkit-scrollbar{
+    display: none;
+  }
 }
 
 @media (min-width: 600px) {
@@ -901,7 +907,8 @@ nav > div > ul > li {
     transform: translateX(20px) translateY(55px);  
   }
   .show > :first-child{
-    height: 480px;
+    height: 510px;
+    transform: translate(-45%, -50%) rotate(10deg);
   }
   .selfie>img{
     animation: slide-img-two linear;
